@@ -1,4 +1,4 @@
-# DNCNavagator
+# DNCNavigator
 
 This is a simple electrion app to keep track of homes that do not want to be contacted or have other statuses.
 
