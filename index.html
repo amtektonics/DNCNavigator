@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <title>DNC Navagator</title>
+        <link rel="stylesheet" href="./content/bootstrap/4.5.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="index.css"/>
+        <link rel="stylesheet" href="./content/open-iconic/font/css/open-iconic-bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="./content/DataTables/Buttons-1.6.3/css/buttons.bootstrap4.min.css"/>
+       
+
+
+    </head>
+    <body>
+        <nav id="app-navbar" class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand"><img src="icon.png" width="25px" height="25px" class="left-right-space" style="transform: translate(0, -2px);">DNC Navigator</span>
+            <ul id="nav-button-container" class="nav navbar-nav navbar-right">
+                <li id="minimize-button" class="oi oi-minus"></li>
+                <li id="close-button" class="oi oi-x"></li>
+            </ul>
+        </nav>
+        
+        <div id="login-container" style="display: none;">
+            <label><strong>Login</strong></label>
+            <input class="form-control col-sm-4" id="login-password-text" type="password" placeholder="Password" />
+            <input id="login-btn" class="btn btn-dark" type="submit">
+        </div>
+       
+        <div id="register-container" style="display: none;">
+            <label><strong>Register</strong></label>
+            <input class="form-control col-sm-4" id="register-password-text" type="password" placeholder="Password" />
+            <input id="register-btn" class="btn btn-dark" type="submit">
+        </div>
+
+        <div id="dnc-table-container" style="display: none;">
+            <div id="menu-buttons">
+                <button id="add-edit-record" class="btn btn-dark"><span class="oi oi-plus"></span> Add Record</button>    
+                <button id="export-records" class="btn btn-dark left-right-space">Export</button>
+                <button id="import-records" class="btn btn-dark left-right-space">Import</button>
+                <div id="menu-records" style="float: right;"><span class="oi oi-cog"></span></div>
+            </div>
+            <table id="dnc-table" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th class="hidden-record">RecordId</th>
+                        <th>Address</th>
+                        <th>Address Line 2</th>
+                        <th class="hidden-record">TerritoryId</th>
+                        <th>Territory</th>
+                        <th>Notes</th>
+                        <th class="hidden-record">StatusId</th>
+                        <th>Status</th>                
+                        <th>Last Updated</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div id="record-edit-container" style="display: none;">
+            <div>
+                <button id="record-edit-delete" class="btn btn-dark" style="display: none;"><span class="oi oi-trash"></span></button>
+                <h3>
+                    Record Editor
+                </h3>
+            </div>
+            <input type="text" id="record-edit-id" style="display: none;" />
+            
+            <label id="record-edit-address-error" style="display: none; color: red; font-size: 8pt;">Address is required and must be less that 60 characters long</label>
+            <div class="form-inline top-bottom-space">
+                <label class="col-sm-2">Address</label>
+                <input class="form-control col-sm-4" type="text" id="record-edit-address" />
+            </div>
+            
+
+            <div class="form-inline top-bottom-space">
+                <label class="col-sm-2">Address Line 2(Optional)</label>
+                <input class="form-control col-sm-4" type="text" id="record-edit-address2"/>
+            </div>
+
+            
+            <label id="record-edit-territory-error" style="display: none; color: red; font-size: 8pt;">Territory is required</label>
+            <div class="form-inline top-bottom-space">
+                <label class="col-sm-2">Territory</label>
+                <button id="record-edit-add-territory" class="btn btn-dark left-right-space"><span class="oi oi-plus"></span>Add territory</button>
+                <input id="record-edit-territory-new" type="text" class="form-control col-sm-3" style="display: none;"/>
+                <select name="Territory" id="record-edit-territory" class="form-control col-sm-3"></select>
+            </div>
+            
+            <label id="record-edit-status-error" style="display: none; color: red; font-size: 8pt;">Status is required</label>
+            <div class="form-inline top-bottom-space">
+                <label class="col-sm-2">Status</label>
+                <button id="record-edit-add-status" class="btn btn-dark left-right-space"><span class="oi oi-plus"></span>Add status</button>
+                <input id="record-edit-status-new" class="form-control col-sm-3" style="display: none;"/> 
+                <select name="Status" id="record-edit-status" class="form-control col-sm-3"></select>
+            </div>
+
+            <div class="form-inline top-bottom-space">
+                <label class="col-sm-2">Notes(Optional)</label>
+                <textarea id="record-edit-notes" class="form-control class-sm-3" style="width: 300px;"></textarea>
+            </div>
+            
+            <div id="record-edit-buttons" class="form-inline">
+                <div class="col-sm-3"></div>
+                <button id="record-edit-back" class="btn btn-dark left-right-space">Back</button>
+                <button id="record-edit-submit" class="btn btn-dark left-right-space">Submit</button>
+            
+            </div>
+        </div>
+
+        <div id="options-menu-container" style="display: none;">
+            <label>clicking this will clear any password and reset the program</label>
+            <div class="top-bottom-space">
+                <button id="options-menu-clear-password" class="btn btn-dark left-right-space"  style="margin: 0.5rem auto;">Clear Password</button>
+            </div>
+            <label>clicking this will clear any  and reset the program</label>
+            <div class="top-bottom-space">
+                <button id="options-menu-clear-database" class="btn btn-dark left-right-space" style="margin: 0.5rem auto;">Delete Database</button>
+            </div>
+            <div id="options-menu-buttons" class="form-inline">
+               
+                <button id="options-menu-back" class="btn btn-dark left-right-space"  style="margin: 0.5rem auto;">Back</button>
+            </div>
+        </div>
+    
+
+
+        
+        <script src="renderer.js" type="text/javascript"></script>
+    </body>
+</html>

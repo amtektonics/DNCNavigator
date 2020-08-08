@@ -1,0 +1,160 @@
+:root{
+    --main-bg-color: #f2f2f2;
+    --main-font-color:#000000;
+}
+
+
+body{
+    background-color: var(--main-bg-color);
+    color:var(--main-font-color);
+    border: 1px solid black;
+}
+
+
+.oi-blue{
+    fill:cornflowerblue;
+}
+
+
+
+#register-container{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+
+#register-password-text{
+    margin: 0.5rem auto;    
+}
+
+
+#login-container{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+
+#login-password-text{
+    margin: 0.5rem auto;
+    
+}
+
+
+#dnc-table-container{
+    margin: 5px auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 98%;
+
+}
+
+#dnc-table-container td{
+    cursor: pointer;
+}
+
+#dnc-table-container tr{
+    transition: 0.5s;
+}
+
+#dnc-table-container tr:hover{
+    background-color: white;
+}
+
+
+#menu-records{
+    cursor: pointer;
+    transition: 0.2s;
+    color: darkslategrey;
+    transform: scale(1.5, 1.5);
+}
+
+#menu-records:hover{
+    color: black;
+    transform: scale(1.7, 1.7);
+}
+
+
+#options-menu-container{
+    margin: 0 auto;
+}
+
+#menu-buttons{
+    margin-bottom: 10px;
+}
+
+#app-navbar{
+    -webkit-app-region: drag;
+}
+
+#nav-button-container{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    -webkit-app-region:none;
+}
+
+#minimize-button{
+    color: rgb(168, 168, 168);
+    display: inline;
+    cursor: pointer;
+    transition: 0.4s;
+    text-align: center;
+    scale: 1.2;
+    padding: 10px;
+}
+
+#minimize-button:hover{
+    color: white;
+    scale: 1.5;
+}
+
+
+#close-button{
+    color: rgb(168, 168, 168);
+    display: inline;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.4s;
+    scale: 1.2;
+    padding: 10px;
+}
+
+#close-button:hover{
+    color: white;
+    scale: 1.5;
+}
+
+#dnc-table_filter{
+    float: right;
+}
+
+#record-edit-container{
+    padding-top: 30px;
+    padding-left: 100px;
+}
+
+
+/* Add Territory */
+#manage-territory-container{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+
+.top-bottom-space{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.left-right-space{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.top-bottom-margin{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

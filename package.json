@@ -1,0 +1,36 @@
+{
+  "name": "dncnavigator",
+  "version": "1.0.0",
+  "description": "Do Not Call managing program",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild -f -w better-sqlite3",
+    "build-win": "electron-packager . dncnavigator --overwrite --platform=win32 --arch=x64 --icon=icon.ico --out=release-builds --prune=true --versions-string.ProductName='DNC Navigator'",
+    "setup-win": "electron-installer-windows.cmd --src ./release-builds/dncnavigator-win32-x64/ --dest dist/installers/"
+  },
+  "author": "Andrew McGuire",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.1.1",
+    "electron-builder": "^22.7.0",
+    "electron-packager": "^15.0.0",
+    "node-gyp": "^7.0.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^7.1.0",
+    "bootstrap": "^4.5.0",
+    "datatables-export-document": "^1.0.0",
+    "datatables.net": "^1.10.21",
+    "datatables.net-bs4": "^1.10.21",
+    "datatables.net-buttons-bs4": "^1.6.2",
+    "electron-build": "0.0.3",
+    "electron-installer-windows": "^3.0.0",
+    "electron-rebuild": "^1.11.0",
+    "install": "^0.13.0",
+    "jquery": "^3.5.1",
+    "jszip": "^3.5.0",
+    "pdfmake": "^0.1.67",
+    "popper.js": "^1.16.1"
+  }
+}

@@ -1,0 +1,79 @@
+:root{
+    --main-bg-color: #f2f2f2;
+    --main-font-color:#000000;
+}
+
+
+body{
+    background-color: var(--main-bg-color);
+    color:var(--main-font-color);
+}
+
+#app-navbar{
+    -webkit-app-region: drag;
+}
+
+#nav-button-container{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    -webkit-app-region:none;
+}
+
+
+#minimize-button{
+    color: rgb(168, 168, 168);
+    display: inline;
+    cursor: pointer;
+    transition: 0.4s;
+    text-align: center;
+    scale: 1.2;
+    padding: 10px;
+}
+
+#minimize-button:hover{
+    color: white;
+    scale: 1.5;
+}
+
+
+#close-button{
+    color: rgb(168, 168, 168);
+    display: inline;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.4s;
+    scale: 1.2;
+    padding: 10px;
+}
+
+#close-button:hover{
+    color: white;
+    scale: 1.5;
+}
+
+#status-edit-table-container{
+    margin: 5px auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 98%;
+}
+
+
+
+
+.top-bottom-space{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.top-bottom-margin{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.left-right-space{
+    margin-left: 5px;
+    margin-right: 5px;
+}
