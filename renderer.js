@@ -384,6 +384,11 @@ $('#menu-records').click(()=>{
     $("#options-menu-container").show('fast')
 })
 
+$("#edit-status-territory").click(()=>{
+    $("#dnc-table-container").hide()
+    $("#status-territory-edit-container").show("fast")
+})
+
 
 //===============================================================
 
@@ -403,6 +408,17 @@ $('#options-menu-back').click(()=>{
     $('#dnc-table-container').show('fast')
 })
 //=================================================
+
+
+//status/territory menu=============================================
+
+$('#status-territory-back-btn').click(()=>{
+    $("#status-territory-edit-container").hide()
+    $("#dnc-table-container").show("fast")
+})
+
+
+//==================================================================
 
 
 $(document).on('keypress', (e)=>{

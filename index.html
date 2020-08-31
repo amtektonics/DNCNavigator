@@ -35,6 +35,7 @@
                 <button id="add-edit-record" class="btn btn-dark"><span class="oi oi-plus"></span> Add Record</button>    
                 <button id="export-records" class="btn btn-dark left-right-space">Export</button>
                 <button id="import-records" class="btn btn-dark left-right-space">Import</button>
+                <button id="edit-status-territory" class="btn btn-dark left-right-space">Edit Status/Territory</button> 
                 <div id="menu-records" style="float: right;"><span class="oi oi-cog"></span></div>
             </div>
             <table id="dnc-table" class="table table-striped table-bordered">
@@ -53,7 +54,7 @@
                 </thead>
             </table>
         </div>
-
+        
         <div id="record-edit-container" style="display: none;">
             <div>
                 <button id="record-edit-delete" class="btn btn-dark" style="display: none;"><span class="oi oi-trash"></span></button>
@@ -119,7 +120,44 @@
                 <button id="options-menu-back" class="btn btn-dark left-right-space"  style="margin: 0.5rem auto;">Back</button>
             </div>
         </div>
-    
+        
+        <div id="status-territory-edit-container" style="display: none;">
+
+            <div id="status-territory-tables">
+                <table id="status-edit-table" class="table">
+                    <tr>
+                        <th>Status Name</th>
+                    </tr>
+
+                </table>
+
+                <table id="territory-edit-table" class="table">
+                    <tr>
+                        <th>Territory Name</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="status-territory-btns">
+                <button id="status-territory-back-btn" class="btn btn-dark">Back</button>
+            </div>
+        </div>
+
+        <div id="status-edit-container" style="display: none;">
+            <input id="status-edit-id" style="display: none;"/>
+            <input id="status-edit-text" type="text" class="form-control"/>
+            <button id="status-edit-back-btn" class="btn btn-dark left-right-space">Back</button>
+            <button id="status-edit-back-btn" class="btn btn-dark left-right-space">Submit</button>
+
+        </div>
+
+        <div id="territory-edit-container" style="display: none;">
+            <input id="territory-edit-id" style="display: none;">
+            <input id="territory-edit-text" type="text" class="form-control"/>
+            <button id="territory-edit-back-btn" class="btn btn-dark left-right-space">Back</button>
+            <button id="territory-edit-back-btn" class="btn btn-dark left-right-space">Submit</button>
+        </div>
+        
 
 
         

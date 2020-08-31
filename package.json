@@ -1,6 +1,6 @@
 {
   "name": "dncnavigator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Do Not Call managing program",
   "main": "main.js",
   "scripts": {
