@@ -122,40 +122,64 @@
         </div>
         
         <div id="status-territory-edit-container" style="display: none;">
+            <div id="status-territory-btns">
+                <button id="status-territory-back-btn" class="btn btn-dark" style="margin: 10px;">Back</button>
+                <button id="add-status-btn" class="btn btn-dark left-right-space">Add Status</button>
+                <button id="add-territory-btn "class="btn btn-dark left-right-space">Add Territory</button>
+            </div>
 
             <div id="status-territory-tables">
                 <table id="status-edit-table" class="table">
-                    <tr>
-                        <th>Status Name</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Status Id</th>
+                            <th>Status Name</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
 
                 </table>
 
                 <table id="territory-edit-table" class="table">
-                    <tr>
-                        <th>Territory Name</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Territory Id</th>
+                            <th>Territory Name</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
                 </table>
             </div>
 
-            <div id="status-territory-btns">
-                <button id="status-territory-back-btn" class="btn btn-dark">Back</button>
-            </div>
+
         </div>
 
         <div id="status-edit-container" style="display: none;">
-            <input id="status-edit-id" style="display: none;"/>
-            <input id="status-edit-text" type="text" class="form-control"/>
-            <button id="status-edit-back-btn" class="btn btn-dark left-right-space">Back</button>
-            <button id="status-edit-back-btn" class="btn btn-dark left-right-space">Submit</button>
-
+            <h3 style="margin-left: 1rem;">Edit Status</h3>
+            <input id="status-edit-id" style="display: none;">
+            <div class="row left-right-space">
+                <label class="col-sm-1" style="margin-bottom: 0; margin-top: 0.5rem; margin-right: 1rem;">Status</label>
+                <input id="status-edit-text" type="text" class="form-control col-sm-3"/>
+            </div>
+            <div class="row left-right-space">
+                <div class="col-sm-2"></div>
+                <button id="status-edit-back-btn" class="btn btn-dark left-right-space top-bottom-margin">Back</button>
+                <button id="status-edit-submit-btn" class="btn btn-dark left-right-space top-bottom-margin">Submit</button>
+            </div>
         </div>
 
         <div id="territory-edit-container" style="display: none;">
+            <h3 style="margin-left: 1rem;">Edit Territory</h3>
             <input id="territory-edit-id" style="display: none;">
-            <input id="territory-edit-text" type="text" class="form-control"/>
-            <button id="territory-edit-back-btn" class="btn btn-dark left-right-space">Back</button>
-            <button id="territory-edit-back-btn" class="btn btn-dark left-right-space">Submit</button>
+            <div class="row left-right-space">
+                <label class="col-sm-1" style="margin-bottom: 0; margin-top: 0.5rem; margin-right: 1rem;">Territory</label>
+                <input id="territory-edit-text" type="text" class="form-control col-sm-3"/>
+            </div>
+            <div class="row left-right-space">
+                <div class="col-sm-2"></div>
+                <button id="territory-edit-back-btn" class="btn btn-dark left-right-space top-bottom-margin">Back</button>
+                <button id="territory-edit-submit-btn" class="btn btn-dark left-right-space top-bottom-margin">Submit</button>
+            </div>
         </div>
         
 

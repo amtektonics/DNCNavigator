@@ -78,14 +78,20 @@ body{
 
 #options-menu-container{
     margin: 0 auto;
+    margin-top: 60px;
 }
 
 #menu-buttons{
-    margin-bottom: 10px;
+    margin-top: 60px;
+    margin-bottom:  10px;
 }
 
 #app-navbar{
     -webkit-app-region: drag;
+    margin-top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
 }
 
 #nav-button-container{
@@ -131,6 +137,7 @@ body{
 }
 
 #record-edit-container{
+    margin-top: 60px;
     padding-top: 30px;
     padding-left: 100px;
 }
@@ -139,6 +146,7 @@ body{
 /* Add Territory */
 #manage-territory-container{
     margin: 0 auto;
+    margin-top: 60px;
     text-align: center;
     padding-top: 5rem;
 }
@@ -146,21 +154,38 @@ body{
 
 
 /*  */
+#status-territory-edit-container{
+    margin-top: 60px;
+}
+
 
 #status-territory-tables{
+    display: flex;
+    margin: 1%;
+    width: 98%;
 }
 
-#status-edit-table{
-    float: left;
-    margin-left: 50px;
-    margin-right: 50px;
+#status-territory-tables table tr:hover{
+    background-color: #fafafa;
 }
 
-#territory-edit-table{
-    display: inline-block;
-    margin-left: 50px;
-    margin-right: 50px;
+
+#status-sterritory-tables table{
+    margin: 40px;
 }
+
+#status-edit-container{
+    margin: 0 auto;
+    margin-top: 80px;
+
+}
+
+#territory-edit-container{
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
 
 .top-bottom-space{
     padding-top: 10px;

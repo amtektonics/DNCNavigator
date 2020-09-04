@@ -153,6 +153,70 @@ ipcMain.on('add-record', (event, args)=>{
   event.reply('load-dnc-table', rows)
 })
 
+
+ipcMain.on('add-status', (event, args)=>{
+  var db = Database(data_file);
+
+  repo.AddStatus(db, args['name'], 1);
+  
+  var data = repo.GetAllStatuses(db);
+    
+  var records = repo.GetCurrentRecords(db);
+
+  db.close();
+
+  event.reply('record-edit-reload-statuses', data);
+
+  event.reply('load-dnc-table', records);
+})
+
+ipcMain.on('add-territory', (event, args)=>{
+  var db = Database(data_file);
+
+  repo.AddTerritory(db, args["name"], -1);
+  
+  var data = repo.GetAllTerritories(db);
+    
+  var records = repo.GetCurrentRecords(db);
+
+  db.close();
+
+  event.reply('record-edit-reload-territories', data);
+
+  event.reply('load-dnc-table', records);
+})
+
+ipcMain.on('update-status', (event, args)=>{
+  var db = Database(data_file);
+  repo.UpdateStatus(db, args["id"], args["name"]);
+
+  var data = repo.GetAllStatuses(db);
+  
+  var records = repo.GetCurrentRecords(db);
+  
+  db.close();
+  
+  event.reply('record-edit-reload-statuses', data);
+  
+  event.reply('load-dnc-table', records);
+})
+
+ipcMain.on('update-territory', (event, args)=>{
+  var db = Database(data_file);
+  repo.UpdateTerritory(db, args["id"], args["name"]);
+
+  var data = repo.GetAllTerritories(db);
+    
+  var records = repo.GetCurrentRecords(db);
+  
+  db.close();
+  
+  event.reply('record-edit-reload-territories', data);
+
+  event.reply('load-dnc-table', records);
+})
+
+
 ipcMain.on('delete-record', (event, args)=>{
   var db = Database(data_file);
   repo.DeleteRecord(db, args)

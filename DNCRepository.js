@@ -225,6 +225,26 @@ function DeleteRecord(db, record_id){
     cmd.run([record.AddressId, record.TerritoryId])
 }
 
+function UpdateStatus(db, status_id, status_name){
+    var query = 
+    "UPDATE " + STATUS_TABLE_NAME + " " +
+    "SET StatusName = ? " +
+    "WHERE StatusId = ?";
+
+    var cmd = db.prepare(query);
+    var result = cmd.run(status_name, status_id);
+}
+
+function UpdateTerritory(db, territory_id, territory_name){
+    var query = 
+    "UPDATE " + TERRITORY_TABLE_NAME + " " +
+    "SET TerritoryName = ? " +
+    "WHERE TerritoryId = ?";
+
+    var cmd = db.prepare(query);
+    var result = cmd.run(territory_name, territory_id);
+    
+}
 
 
 function ImportExternalDb(external_db, main_db){
@@ -329,6 +349,9 @@ exports.AddRecord = AddRecord;
 exports.AddAddress = AddAddress;
 exports.AddStatus = AddStatus;
 exports.AddTerritory = AddTerritory;
+
+exports.UpdateStatus = UpdateStatus;
+exports.UpdateTerritory = UpdateTerritory;
 
 exports.DeleteRecord = DeleteRecord;
 exports.ImportExternalDb = ImportExternalDb

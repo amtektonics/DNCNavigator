@@ -153,11 +153,14 @@ ipcRenderer.on('load-dnc-table', (event, args)=>{
 
 ipcRenderer.on('record-edit-reload-territories', (event, args)=>{
 
-    $('#record-edit-territory').find('option').remove()
-    $('#record-edit-territory').val('')
-    $('#record-edit-territory').append(new Option('', ''))
+    $('#record-edit-territory').find('option').remove();
+    $('#record-edit-territory').val('');
+    $('#record-edit-territory').append(new Option('', ''));
+    $('#territory-edit-table tbody').empty();
     args.forEach((row)=>{
-        $('#record-edit-territory').append(new Option(row["TerritoryName"], row["TerritoryId"]))
+        $('#record-edit-territory').append(new Option(row["TerritoryName"], row["TerritoryId"]));
+        var tableRecord = "<tr><td>" + row["TerritoryId"] +"</td><td>" + row["TerritoryName"] + "</td></tr>"
+        $('#territory-edit-table tbody').append(tableRecord)
     })
 })
 
@@ -165,8 +168,11 @@ ipcRenderer.on('record-edit-reload-statuses', (event, args)=>{
     $('#record-edit-status').find('option').remove()
     $('#record-edit-status').val('')
     $('#record-edit-status').append(new Option('', ''))
+    $('#status-edit-table tbody').empty();
     args.forEach((row)=>{
         $('#record-edit-status').append(new Option(row["StatusName"], row["StatusId"]))
+        var tableRecord = "<tr><td>"+row["StatusId"] +"</td><td>" +row["StatusName"] + "</td></tr>"
+        $('#status-edit-table tbody').append(tableRecord)
     })
 })
 
@@ -417,6 +423,95 @@ $('#status-territory-back-btn').click(()=>{
     $("#dnc-table-container").show("fast")
 })
 
+$('#territory-edit-table').click((event)=>{
+    var currentRow = $(event.target).parent();
+
+    var territoryId = currentRow.find("td:eq(0)").text();
+    var territoryName = currentRow.find("td:eq(1)").text();
+    $('#territory-edit-id').val(territoryId);
+    $('#territory-edit-text').val(territoryName);
+
+    $('#status-territory-edit-container').hide();
+    $('#territory-edit-container').show('fast');
+});
+
+$('#territory-edit-back-btn').click(()=>{
+    $('#territory-edit-container').hide();
+    $('#status-territory-edit-container').show('fast');
+    
+    $('#territory-edit-id').val('');
+    $('#territory-edit-text').val('');
+});
+
+
+$('#status-edit-table').click((event)=>{
+    var currentRow = $(event.target).parent();
+
+    var statusId = currentRow.find("td:eq(0)").text();
+    var statusName = currentRow.find("td:eq(1)").text();
+    $('#status-edit-id').val(statusId);
+    $('#status-edit-text').val(statusName);
+
+    $('#status-territory-edit-container').hide();
+    $('#status-edit-container').show('fast');
+});
+
+$('#status-edit-back-btn').click(()=>{
+    $('#status-edit-container').hide();
+    $('#status-territory-edit-container').show('fast');
+    
+    $('#status-edit-id').val('');
+    $('#status-edit-text').val('');
+});
+
+$('#territory-edit-submit-btn').click(()=>{
+    var id = $('#territory-edit-id').val();
+    var name = $('#territory-edit-text').val();
+    
+
+    if(!isNaN(id) && id > 0){
+        ipcRenderer.send('update-territory',{"id": id, "name":name});
+    }else{
+        ipcRenderer.send('add-territory', {"name": name});
+    }
+
+    $('#territory-edit-container').hide();
+    $('#status-territory-edit-container').show('fast');
+})
+
+$('#status-edit-submit-btn').click(()=>{
+    var id = $('#status-edit-id').val();
+    var name = $('#status-edit-text').val();
+    
+    if(!isNaN(id) && id > 0){
+        ipcRenderer.send('update-status', {"id": id, "name":name});
+    }else{
+        ipcRenderer.send('add-status', {"name": name});
+    }
+
+    $('#status-edit-container').hide();
+    $('#status-territory-edit-container').show('fast');
+})
+
+$('#add-status-btn').click(()=>{
+    $('#status-edit-id').val('');
+    
+    $('#status-edit-text').val('');
+
+    $('#status-territory-edit-container').hide();
+    
+    $('#status-edit-container').show('fast');
+})
+
+$('#add-territory-btn').click(()=>{
+    $('#territory-edit-id').val('');
+    
+    $('#territory-edit-text').val('');
+    
+    $('#status-territory-edit-container').hide();
+    
+    $('#territory-edit-container').show('fast');
+})
 
 //==================================================================
 
