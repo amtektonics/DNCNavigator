@@ -12,7 +12,7 @@
   "author": "Andrew McGuire",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^9.1.1",
+    "electron": "^9.3.0",
     "electron-builder": "^22.7.0",
     "electron-packager": "^15.0.0",
     "node-gyp": "^7.0.0"
