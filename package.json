@@ -19,7 +19,9 @@
   },
   "dependencies": {
     "better-sqlite3": "^7.1.0",
+    "bl": "^4.0.3",
     "bootstrap": "^4.5.0",
+    "cryptiles": "^4.1.3",
     "datatables-export-document": "^1.0.0",
     "datatables.net": "^1.10.21",
     "datatables.net-bs4": "^1.10.21",
@@ -27,11 +29,14 @@
     "electron-build": "0.0.3",
     "electron-installer-windows": "^3.0.0",
     "electron-rebuild": "^1.11.0",
+    "hoek": "^6.1.3",
     "install": "^0.13.0",
     "jquery": "^3.5.1",
     "jszip": "^3.5.0",
     "npm": "^6.14.8",
     "pdfmake": "^0.1.67",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "tough-cookie": "^4.0.0",
+    "tunnel-agent": "^0.6.0"
   }
 }
