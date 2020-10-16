@@ -12,7 +12,7 @@
   "author": "Andrew McGuire",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^9.1.1",
+    "electron": "^9.3.2",
     "electron-builder": "^22.7.0",
     "electron-packager": "^15.0.0",
     "node-gyp": "^7.0.0"
@@ -30,6 +30,7 @@
     "install": "^0.13.0",
     "jquery": "^3.5.1",
     "jszip": "^3.5.0",
+    "npm": "^6.14.8",
     "pdfmake": "^0.1.67",
     "popper.js": "^1.16.1"
   }
