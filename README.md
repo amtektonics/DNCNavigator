@@ -4,6 +4,7 @@ This is a simple electrion app to keep track of homes that do not want to be con
 
 You have the option of buildign it yourself or grabing it from here and following the build instructions
 
+![Screenshot](https://raw.githubusercontent.com/amtektonics/DNCNavigator/master/DNCScreenshot.png)
 
 ## Building instructions
 *Only works for on windows*
