@@ -1,10 +1,11 @@
 # DNCNavigator
 
-This is a simple electrion app to keep track of homes that do not want to be contacted or have other statuses.
-
-You have the option of buildign it yourself or grabing it from here and following the build instructions
+### This is a simple electrion app to keep track of homes that do not want to be contacted or have other statuses.
 
 ![Screenshot](https://raw.githubusercontent.com/amtektonics/DNCNavigator/master/DNCScreenshot.png)
+
+
+You have the option of buildign it yourself or grabing it from here and following the build instructions
 
 ## Building instructions
 *Only works for on windows*
